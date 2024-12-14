@@ -1,0 +1,430 @@
+/* App.css */
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f0f0f5;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+}
+
+.username-input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  margin: 20px 0;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+
+.own-message {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.other-message {
+  flex-direction: row;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.message-content {
+  max-width: 60%;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.own-message .message-content {
+  background: #dcf8c6;
+}
+
+.message-sender {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.message-text {
+  margin: 0;
+}
+
+.message-timestamp {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 5px;
+  display: block;
+}
+
+.typing-indicator {
+  font-style: italic;
+  color: gray;
+  margin-top: 10px;
+}
+
+.message-input-container {
+  display: flex;
+  padding: 10px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.send-button {
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background: #45a049;
+}
+/* Default Light Mode */
+/* Light Mode Container */
+.chat-container.light-mode {
+  background-color: #f0e6d2; /* Beige background */
+  color: #222222; /* Dark text color */
+  font-family: "Courier New", Courier, monospace; /* Monospaced font for 4chan feel */
+  line-height: 1.5; /* Improved readability */
+}
+
+/* Header */
+.chat-container.light-mode .header {
+  background-color: #259725; /* Light beige for header */
+  color: #ffffff; /* Dark gray for contrast */
+  border-bottom: 1px solid #bcb59e; /* Subtle border */
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; /* Emphasize structure */
+}
+
+/* Username Input */
+.chat-container.light-mode .username-input {
+  background-color: #f9f5eb; /* Very light beige for inputs */
+  border: 1px solid #bcb59e;
+  padding: 5px;
+  color: #444444;
+  margin-left: 10px;
+  font-family: inherit;
+  border-radius: 3px;
+}
+
+/* Buttons */
+.chat-container.light-mode .theme-toggle-button,
+.chat-container.light-mode .send-button {
+  background-color: #a6b89e; /* Muted green */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: inherit;
+  margin-left: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.chat-container.light-mode .theme-toggle-button:hover,
+.chat-container.light-mode .send-button:hover {
+  background-color: #8ca07e; /* Slightly darker green on hover */
+}
+
+/* Chat Window */
+.chat-container.light-mode .chat-window {
+  background-color: #f9f5eb; /* Light beige */
+  border: 1px solid #bcb59e;
+  padding: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+  margin: 10px 0;
+  font-family: "Courier New", Courier, monospace; /* Retro feel */
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Messages */
+.chat-container.light-mode .message {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #bcb59e; /* Subtle border */
+  background-color: #ffffff; /* White for messages */
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-container.light-mode .message.own-message {
+  background-color: #e2e8d6; /* Soft green for own messages */
+  border-color: #a6b89e; /* Match button green */
+}
+
+.chat-container.light-mode .message-sender {
+  font-weight: bold;
+  color: #006400; /* Dark green for sender names */
+  margin-bottom: 2px;
+}
+
+.chat-container.light-mode .message-text {
+  margin: 5px 0;
+  color: #222222; /* Dark text for readability */
+}
+
+.chat-container.light-mode .message-timestamp {
+  font-size: 10px;
+  color: #777777; /* Subtle gray for timestamps */
+}
+
+/* Quoting (4chan Green Style) */
+.chat-container.light-mode .message .quote {
+  color: #77dd77; /* Bright green for quotes */
+  font-style: italic;
+  padding-left: 5px;
+  border-left: 2px solid #77dd77; /* Visual emphasis */
+}
+
+/* Input Container */
+.chat-container.light-mode .message-input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #d6d2c4; /* Match header background */
+  border-top: 1px solid #bcb59e; /* Subtle separation */
+}
+
+/* Message Input */
+.chat-container.light-mode .message-input {
+  flex-grow: 1;
+  background-color: #ffffff; /* White background for input */
+  border: 1px solid #bcb59e;
+  padding: 5px;
+  font-family: inherit;
+  border-radius: 3px;
+  color: #222222;
+  transition: border-color 0.3s ease;
+}
+
+.chat-container.light-mode .message-input:focus {
+  border-color: #a6b89e; /* Highlight input with green when focused */
+}
+
+/* Scrollbar Styling */
+.chat-container.light-mode .chat-window::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat-container.light-mode .chat-window::-webkit-scrollbar-thumb {
+  background: #bcb59e; /* Beige scrollbar */
+  border-radius: 3px;
+}
+
+.chat-container.light-mode .chat-window::-webkit-scrollbar-thumb:hover {
+  background: #a6b89e; /* Slightly green on hover */
+}
+
+
+/* Dark Mode Styles */
+.chat-container.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-family: Arial, sans-serif; /* Default sans-serif font */
+}
+
+.chat-container.dark-mode .header {
+  background-color: #1a2b4c; /* Complex dark blue */
+  color: #ffffff;
+  border-bottom: 1px solid #2e3b55;
+}
+
+/* Shared Button and Input Styles */
+.theme-toggle-button,
+.send-button {
+  transition: background-color 0.3s ease;
+}
+
+
+/* Dark Mode Styles */
+/* Main Dark Mode Container */
+.chat-container.dark-mode {
+  background-color: #1e1e1e; /* Dark background */
+  color: #ffffff; /* White text for contrast */
+  font-family: "Courier New", Courier, monospace; /* Monospaced font for retro aesthetic */
+  line-height: 1.5; /* Better readability */
+}
+
+/* Header Styling */
+.chat-container.dark-mode .header {
+  background-color: #1a2b4c; /* Retain current complex dark blue */
+  color: #ffffff;
+  border-bottom: 1px solid #2e3b55;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px; /* Slightly smaller font */
+  font-weight: bold;
+  text-transform: uppercase; /* Mimic classic forum style */
+}
+
+/* Buttons */
+.chat-container.dark-mode .theme-toggle-button,
+.chat-container.dark-mode .send-button {
+  background-color: #1a3d5e; /* Deep blue for buttons */
+  color: #ffffff; /* White text */
+  border: 1px solid #2e3b55; /* Thin border for retro feel */
+  padding: 5px 10px; /* Compact button size */
+  border-radius: 2px; /* Sharper corners */
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  transition: background-color 0.3s ease;
+}
+
+.chat-container.dark-mode .theme-toggle-button:hover,
+.chat-container.dark-mode .send-button:hover {
+  background-color: #14455e; /* Slightly brighter blue on hover */
+}
+
+/* Input Field */
+.chat-container.dark-mode .message-input {
+  flex-grow: 1;
+  background-color: #2b2b2b; /* Darker background for input */
+  color: #ffffff; /* White text */
+  font-family: "Courier New", Courier, monospace; /* Monospaced font */
+  font-size: 14px;
+  padding: 8px;
+  border: 1px solid #444; /* Subtle border for input */
+  border-radius: 2px; /* Sharper corners */
+  margin-right: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.chat-container.dark-mode .message-input:focus {
+  border-color: #1a3d5e; /* Highlight input when focused */
+}
+
+/* Chat Window */
+.chat-container.dark-mode .chat-window {
+  background-color: #1e1e1e; /* Same background as container */
+  border: 1px solid #2e3b55; /* Thin border for retro structure */
+  padding: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+  font-family: "Courier New", Courier, monospace; /* Monospaced font */
+  font-size: 14px;
+  line-height: 1.4; /* Retro spacing */
+}
+
+/* Message Styling */
+.chat-container.dark-mode .message {
+  margin-bottom: 15px; /* Add spacing between messages */
+  padding: 5px;
+  border: 1px solid #444; /* Subtle border around messages */
+  border-radius: 2px; /* Sharper corners */
+  background-color: #2e2e2e; /* Slightly lighter for contrast */
+  font-family: "Courier New", Courier, monospace;
+}
+
+.chat-container.dark-mode .message.own-message {
+  background-color: #1a3d5e; /* Distinctive color for own messages */
+  color: #ffffff;
+}
+
+.chat-container.dark-mode .message .message-sender {
+  font-weight: bold;
+  color: #050505; /* Subtle gray for sender names */
+  font-size: 13px;
+}
+
+.chat-container.dark-mode .message .message-text {
+  margin: 5px 0;
+  color: #f30808;
+  font-size: 14px;
+}
+
+.chat-container.dark-mode .message .message-timestamp {
+  font-size: 12px;
+  color: #888888; /* Dim text for timestamps */
+}
+
+/* Quote Style (Mimic Green Quoting) */
+.chat-container.dark-mode .message .message-text .quote {
+  color: #77dd77; /* 4chan-inspired green for quotes */
+  font-style: italic;
+}
+
+/* Typing Indicator */
+.chat-container.dark-mode .typing-indicator {
+  font-family: "Courier New", Courier, monospace;
+  color: #cccccc;
+  font-style: italic;
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* Scrollbar Styling for Retro Look */
+.chat-container.dark-mode .chat-window::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat-container.dark-mode .chat-window::-webkit-scrollbar-thumb {
+  background: #444; /* Dark scrollbar */
+  border-radius: 2px; /* Retro squared scrollbar */
+}
+
+.chat-container.dark-mode .chat-window::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Slightly brighter on hover */
+}
+/* Prevent long words from breaking the layout */
+.chat-container .message-text {
+  word-wrap: break-word; /* Allows wrapping at word boundaries */
+  overflow-wrap: break-word; /* Ensures words are broken if too long */
+  white-space: normal; /* Prevents text from staying on a single line */
+}
+
+/* Ensure the message container respects its parent's width */
+.chat-container .message {
+  max-width: 100%; /* Limit message width to the chat container */
+  box-sizing: border-box; /* Include padding and borders in width calculation */
+}
